@@ -1,18 +1,14 @@
 const express = require("express");
 const cors = require("cors");
-const config = require("./config");
-const detectScam = require("./scamRules");
 
 const app = express();
-app.use(cors());
+
 app.use(express.json());
+app.use(cors());
 
-app.post("/api/check", (req, res) => {
-  const { url, type } = req.body;
-  const result = detectScam(url, type);
-  res.json(result);
-});
+// tumhare routes yahan rahenge
 
-app.listen(config.port, () => {
-  console.log(`API running on port ${config.port}`);
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log("API running on port", PORT);
 });

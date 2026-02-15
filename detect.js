@@ -1,5 +1,4 @@
-module.exports = function detect(url, type) {
-
+function detect(url, type) {
   const pakScamKeywords = [
     "registration-fee",
     "online-earning-pk",
@@ -33,4 +32,7 @@ module.exports = function detect(url, type) {
     risk: "LOW",
     reason: "No scam patterns found"
   };
-};
+}
+
+module.exports = detect; //this part was missing
+
